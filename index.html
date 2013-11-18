@@ -1,10 +1,9 @@
 <html>
 	<head>
-
 		<title>
 			Test
 		</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<style type="text/css">
 			div.headerTab {
 				text-align:center;
@@ -17,6 +16,11 @@
 
 			div.headerTab:hover {
 				background-color: #DEB887;
+			}
+
+			div.headerSelectedTab {
+				background-color: #DEB887;
+				display: inline-block;
 			}
 
 			div.bannerEdge {
@@ -75,7 +79,7 @@
 
 			div.titleLeft {
 				display: inline-block;
-				margin-left: 150px;
+				margin-left: 50px;
 				margin-right: 10px;
 				min-height: 60px;
 				vertical-align: middle;
@@ -94,10 +98,20 @@
 			div.titleRight {
 				display: inline-block;
 				margin-left: 10px;
-				margin-right: 150px;
+				margin-right: 50px;
 				min-height: 60px;
 				vertical-align: middle;
 				text-align: center
+			}
+
+			div.titleLeft img {
+				width: 170px;
+				height: 90px;
+			}
+
+			div.titleRight img {
+				width: 170px;
+				height: 90px;
 			}
 
 			div.tabSlab {
@@ -107,17 +121,54 @@
 				color: #fff;
 			}
 
-			div.footerImage {
-				vertical-align: middle;
-				text-align: center
+			div.tabOuter {
+				padding-top: 2px;
+				padding-bottom: 2px;
 			}
 
-			div.footerImage img {
-				width: 80px;
-				height: 80px;
+			div#content div {
+				text-align: center;
+				vertical-align: middle
 			}
-			
+
+			div#home img {
+				width: 500px;
+				height: 500px;
+			}
+
+			div.namesImage {
+				display: inline-block;
+				vertical-align: bottom;
+				text-align: left;
+			}
+
+			div.namesImage img {
+				width: 175px;
+				height: 80px;		
+			}
+
+			div#footer {
+				margin-top: 2px;
+				border-top: 1px solid #90b8c4;
+			}
+
 		</style>
+		<script>
+			$(document).ready(function() {
+				$("div.tabSlab").children("div.headerTab").each(function(index) {
+					var text = $(this).text().trim().toLowerCase();
+					if (text === "home") {
+						$(this).addClass("headerSelectedTab");
+					}
+					$(this).click(function() {
+						$("div#content div").hide();
+						$("div.tabSlab div.headerSelectedTab").removeClass("headerSelectedTab");
+						$(this).addClass("headerSelectedTab");
+						$("#"+text).show();
+					});
+				});	
+			});
+		</script>
 	</head>
 	<body>
 		<table border="0" style="margin-left: auto; margin-right: auto; padding: 0; background-color: #F5DEB3" width="70%" height="100%">
@@ -133,13 +184,13 @@
 							</span>
 						</div>
 						<div class="titleLeft">
-							KOMAL
+							<img src="res/komal.png" />
 						</div>
 						<div class="titleCenter">
 							<img src="res/Double_heart.gif" />
 						</div>
 						<div class="titleRight">
-							AKSHAY
+							<img src="res/akshay.png" />
 						</div>
 						<div class="bannerSideRight">
 							<span>
@@ -152,31 +203,48 @@
 						</div>
 					</div>
 					<div>&nbsp;</div>
-					<div class="tabSlab">
-						<div class="headerTab">
-							Home
-						</div>
-						<div class="headerTab">
-							Pictures
-						</div>
-						<div class="headerTab">
-							Venue
-						</div>
-						<div class="headerTab">
-							RSVP
+					<div class="tabOuter">
+						<div class="tabSlab">
+							<div class="headerTab">
+								Home
+							</div>
+							<div class="headerTab">
+								Pictures
+							</div>
+							<div class="headerTab">
+								Venue
+							</div>
+							<div class="headerTab">
+								RSVP
+							</div>
 						</div>
 					</div>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					&nbsp;
+					<div id="content">
+						<div id="home">
+							<img src="http://distilleryimage0.ak.instagram.com/5c12b848501511e3b98e0adf6264dc9a_8.jpg" />
+						</div>
+						<div id="pictures" style="display: none">
+							Pictures
+						</div>
+						<div id="venue" style="display: none">
+							Venue
+						</div>
+						<div id="rsvp" style="display: none">
+							RSVP
+						</div>
+					</div>
 				</td>
 			</tr>
 			<tr height="10%">
 				<td>
-					<div class="footerImage">
-						<img src="res/footer.png" />
+					<div id="footer">
+						<div class="namesImage">
+							<img src="res/wedding_names.png" />
+						</div>
 					</div>
 				</td>
 			</tr>
