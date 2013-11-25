@@ -126,14 +126,39 @@
 				padding-bottom: 2px;
 			}
 
+			div#content {
+			}
+
 			div#content div {
 				text-align: center;
-				vertical-align: middle
+				vertical-align: middle;
+			}
+
+			div#content div#home {
+				background-image: url('res/open_book.png');	
+				background-repeat:no-repeat;
+				min-height: 500px;
+				margin-left: 50px;
+				margin-right: 50px;
+			}
+
+			div#home div#photoframe {
+				margin-left: 450px;
+				background-image: url('res/photo_frame.png');	
+				background-repeat:no-repeat;
+				min-height: inherit;
+			}
+
+			div#photoframe div#photo {
+				text-align: left;
+				margin-left: 45px;
+				padding-top: 8px;
 			}
 
 			div#home img {
-				width: 500px;
-				height: 500px;
+				width: 420px;
+				height: 390px;
+				margin-top: 5px;
 			}
 
 			div.namesImage {
@@ -165,13 +190,14 @@
 						$("div.tabSlab div.headerSelectedTab").removeClass("headerSelectedTab");
 						$(this).addClass("headerSelectedTab");
 						$("#"+text).show();
+						$("#"+text+" div").show();
 					});
 				});	
 			});
 		</script>
 	</head>
 	<body>
-		<table border="0" style="margin-left: auto; margin-right: auto; padding: 0; background-color: #F5DEB3" width="70%" height="100%">
+		<table border="0" style="margin-left: auto; margin-right: auto; padding: 0; background-color: #F5DEB3" width="80%" height="100%">
 			<tr height="20%">
 				<td>
 					<div style="vertical-align:middle ;text-align: center; min-height: 60px; max-height: 60px">
@@ -225,7 +251,11 @@
 				<td>
 					<div id="content">
 						<div id="home">
-							<img src="http://distilleryimage0.ak.instagram.com/5c12b848501511e3b98e0adf6264dc9a_8.jpg" />
+							<div id="photoframe">
+								<div id="photo">
+									<img src="http://distilleryimage0.ak.instagram.com/5c12b848501511e3b98e0adf6264dc9a_8.jpg" />
+								</div>
+							</div>
 						</div>
 						<div id="pictures" style="display: none">
 							Pictures
