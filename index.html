@@ -4,180 +4,7 @@
 			Test
 		</title>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<style type="text/css">
-			div.headerTab {
-				text-align:center;
-				display: inline-block;
-				padding: 5px;
-				margin-left: 40px;
-				margin-right: 40px;
-				cursor: pointer;
-			}
-
-			div.headerTab:hover {
-				background-color: #DEB887;
-			}
-
-			div.headerSelectedTab {
-				background-color: #DEB887;
-				display: inline-block;
-			}
-
-			div.bannerEdge {
-				display: inline-block;
-			}
-
-			div.bannerSideLeft {
-				display: inline-block;
-				background-color: #90B8C4;
-				height: 50px;
-				vertical-align: top;
-				text-align: center;
-				margin-left: -16px;
-				margin-top: 12px;
-				padding-left: 20px;
-				padding-right: 20px;
-			}
-			
-			div.bannerSideLeft span {
-				color: #fff;
-				display: inline-block;
-				margin-top: 15px;
-				border-top: 1px solid white;
-				border-bottom: 1px solid white;
-			}
-
-			div.bannerSideRight {
-				display: inline-block;
-				background-color: #90B8C4;
-				height: 50px;
-				vertical-align: top;
-				text-align: center;
-				margin-right: -16px;
-				margin-top: 12px;
-				padding-left: 20px;
-				padding-right: 20px;
-			}
-
-			div.bannerSideRight span {
-				color: #fff;
-				display: inline-block;
-				margin-top: 15px;
-				border-top: 1px solid white;
-				border-bottom: 1px solid white;
-			}
-
-			div.bannerEdgeLeft {
-				display: inline-block;
-				margin-left: 20px;
-			}
-
-			div.bannerEdgeRight {
-				display: inline-block;
-				margin-right: 20px;
-			}
-
-			div.titleLeft {
-				display: inline-block;
-				margin-left: 50px;
-				margin-right: 10px;
-				min-height: 60px;
-				vertical-align: middle;
-				text-align: center
-			}
-
-			div.titleCenter {
-				display: inline-block;
-				margin-left: 5px;
-				margin-right: 5px;
-				min-height: 60px;
-				vertical-align: middle;
-				text-align: center
-			}
-
-			div.titleRight {
-				display: inline-block;
-				margin-left: 10px;
-				margin-right: 50px;
-				min-height: 60px;
-				vertical-align: middle;
-				text-align: center
-			}
-
-			div.titleLeft img {
-				width: 170px;
-				height: 90px;
-			}
-
-			div.titleRight img {
-				width: 170px;
-				height: 90px;
-			}
-
-			div.tabSlab {
-				text-align: center;
-				width: 100%;
-				background-color: #90B8C4;
-				color: #fff;
-			}
-
-			div.tabOuter {
-				padding-top: 2px;
-				padding-bottom: 2px;
-			}
-
-			div#content {
-			}
-
-			div#content div {
-				text-align: center;
-				vertical-align: middle;
-			}
-
-			div#content div#home {
-				background-image: url('res/open_book.png');	
-				background-repeat:no-repeat;
-				min-height: 500px;
-				margin-left: 50px;
-				margin-right: 50px;
-			}
-
-			div#home div#photoframe {
-				margin-left: 450px;
-				background-image: url('res/photo_frame.png');	
-				background-repeat:no-repeat;
-				min-height: inherit;
-			}
-
-			div#photoframe div#photo {
-				text-align: left;
-				margin-left: 45px;
-				padding-top: 8px;
-			}
-
-			div#home img {
-				width: 420px;
-				height: 390px;
-				margin-top: 5px;
-			}
-
-			div.namesImage {
-				display: inline-block;
-				vertical-align: bottom;
-				text-align: left;
-			}
-
-			div.namesImage img {
-				width: 175px;
-				height: 80px;		
-			}
-
-			div#footer {
-				margin-top: 2px;
-				border-top: 1px solid #90b8c4;
-			}
-
-		</style>
+		<link rel="stylesheet" href="res/styles/styles.css" />
 		<script>
 			$(document).ready(function() {
 				$("div.tabSlab").children("div.headerTab").each(function(index) {
@@ -206,7 +33,7 @@
 						</div>
 						<div class="bannerSideLeft">
 							<span>
-								19th January, 2013	
+								19th January, 2014	
 							</span>
 						</div>
 						<div class="titleLeft">
@@ -258,7 +85,42 @@
 							</div>
 						</div>
 						<div id="pictures" style="display: none">
-							Pictures
+							<div id="pictureslide">
+								<input type="radio" id="button-1" name="controls" checked="checked"/>
+        							<label for="button-1"></label>
+        							<input type="radio" id="button-2" name="controls"/>
+        							<label for="button-2"></label>
+        							<input type="radio" id="button-3" name="controls"/>
+        							<label for="button-3"></label>
+        							<input type="radio" id="button-4" name="controls"/>
+        							<label for="button-4"></label>
+        							<input type="radio" id="button-5" name="controls"/>
+        							<label for="button-5"></label>
+        							<label for="button-1" class="arrows" id="arrow-1">></label>
+        							<label for="button-2" class="arrows" id="arrow-2">></label>
+        							<label for="button-3" class="arrows" id="arrow-3">></label>
+        							<label for="button-4" class="arrows" id="arrow-4">></label>
+        							<label for="button-5" class="arrows" id="arrow-5">></label>
+								<div id="slideshow-inner">
+            								<ul>
+                								<li id="slide1">
+											<img src="res/images/img_1.jpg" />
+                								</li>
+                								<li id="slide2">
+											<img src="res/images/img_2.jpg" />
+                								</li>
+                								<li id="slide3">
+											<img src="res/images/img_4.jpg" />
+                								</li>
+                								<li id="slide4">
+											<img src="res/images/img_5.jpg" />
+                								</li>
+                								<li id="slide5">
+											<img src="res/images/img_6.jpg" />
+                								</li>
+            								</ul>
+        							</div>
+							</div>
 						</div>
 						<div id="venue" style="display: none">
 							Venue
